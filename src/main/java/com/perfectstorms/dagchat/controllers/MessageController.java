@@ -1,7 +1,6 @@
 package com.perfectstorms.dagchat.controllers;
 
 import com.perfectstorms.dagchat.entities.Message;
-import com.perfectstorms.dagchat.entities.User;
 import com.perfectstorms.dagchat.repositories.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
