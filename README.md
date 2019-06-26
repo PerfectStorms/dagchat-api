@@ -1,6 +1,6 @@
 # dagchat-api
 
-**v.0.0.1**
+**v.0.1**
 
 [![Build Status](https://travis-ci.com/perfectstorms/dagchat-api.svg?branch=master)](https://travis-ci.com/perfectstorms/dagchat-api)
 
