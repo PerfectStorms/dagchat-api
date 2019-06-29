@@ -23,6 +23,6 @@ public class Chat {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "private")
-    private Boolean isPrivate;
+    @Column(name = "secret")
+    private Boolean secret;
 }
