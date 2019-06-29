@@ -1,15 +1,16 @@
 package com.perfectstorms.dagchat.controllers;
 
 import com.perfectstorms.dagchat.entities.Chat;
-import com.perfectstorms.dagchat.entities.Message;
 import com.perfectstorms.dagchat.repositories.ChatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class ChatController {
 
@@ -22,16 +23,17 @@ public class ChatController {
 
     @GetMapping(value = "/chats")
     public List<Chat> getAll() {
-        return chatRepository.findAll();
+        return chatRepository.getAll();
+    }
+
+    @GetMapping(value = "/chats/{name}")
+    public Chat getOneByName(@PathVariable String name) {
+        return chatRepository.hasChatByName(name);
     }
 
     @RequestMapping(value = "/chats", method = RequestMethod.POST)
     public ResponseEntity addMessage(@RequestBody Chat chat) {
-        chatRepository.save(new Chat(
-                chat.getId(),
-                chat.getName(),
-                chat.getIsPrivate()
-        ));
+        chatRepository.save(chat);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

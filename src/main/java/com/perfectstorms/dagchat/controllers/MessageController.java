@@ -15,6 +15,7 @@ import java.util.List;
  * @author mamadaliev
  *
  */
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class MessageController {
 
@@ -59,13 +60,7 @@ public class MessageController {
      */
     @RequestMapping(value = "/messages", method = RequestMethod.POST)
     public ResponseEntity addMessage(@RequestBody Message message) {
-        messageRepository.save(new Message(
-                message.getId(),
-                message.getUsername(),
-                message.getMessage(),
-                message.getChat(),
-                message.getTimes()
-        ));
+        messageRepository.save(message);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
