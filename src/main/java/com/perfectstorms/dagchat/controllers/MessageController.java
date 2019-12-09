@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -68,7 +69,7 @@ public class MessageController {
      * Delete message.
      *
      * @param id Identification number of the message.
-     * @return ResponseEntity class.
+     * @return ResponseEntity class.c
      */
     @RequestMapping(value = "/messages", method = RequestMethod.DELETE)
     public ResponseEntity deleteMessage(@RequestBody Long id) {

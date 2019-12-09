@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "messages")
@@ -31,5 +31,5 @@ public class Message {
     private String chat;
 
     @Column(name = "times")
-    private Timestamp times;
+    private String times;
 }
